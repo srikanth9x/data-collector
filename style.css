@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+@import url("https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css");
+
+:root {
+  --bg-dark: oklch(0.1 0 27);
+  --bg-light: oklch(0.2 0 27);
+  --text: oklch(0.96 0 27);
+  --text-muted: oklch(0.76 0 27);
+  --highlight: oklch(0.5 0 27);
+  --border: oklch(0.4 0 27);
+  --primary: oklch(0.66 0.18 27);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-dark);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 1.125rem;
+}
+
+#page {
+  width: 100%;
+  min-width: 15.625rem;
+  padding: 0.5rem 0;
+  background: var(--bg-dark);
+  border: var(--border) solid 0.125rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav, #targetsList p{
+  text-align: center;
+  width: 92%;
+  background: var(--bg-light);
+  color: var(--text);
+  font-size: 2rem;
+  font-family: inherit;
+  border: var(--border) solid 0.125rem;
+  border-top-color: var(--highlight);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+input[type = "text"] {
+  width: 88%;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  align-self: center;
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  background: var(--highlight);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16.75rem;
+}
+
+form {
+  width: 88%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--bg-light);
+  color: var(--text);
+  font-family: inherit;
+  border: var(--border) solid 0.125rem;
+  border-top-color: var(--highlight);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+#video, #canvas {
+  position: absolute;
+  width: 92%;
+  aspect-ratio: 4/3;
+  background: transparent;
+  border: var(--border) solid 0.125rem;
+  border-top-color: var(--highlight);
+  border-radius: 0.5rem;
+}
+
+
+
+#classDisplay, #download {
+  width: 92%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-light);
+  color: var(--text);
+  font-family: inherit;
+  border: var(--border) solid 0.125rem;
+  border-top-color: var(--highlight);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+#targetsList {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  gap: 0.5rem;
+  
+}
+
+#targetsList div {
+  width: 88%;
+  background: var(--bg-light);
+  color: var(--text);
+  font-family: inherit;
+  border: var(--border) solid 0.125rem;
+  border-top-color: var(--highlight);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.textInputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.textInputs input {
+  align-self: center;
+}
+
+.dominantHand {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+#classDisplay p, #download p {
+  color: var(--text-muted);
+}
+
+#classDisplay h1{
+  font-size: 5rem;
+  color: var(--primary);
+}
+
+.progressBar {
+  width: 92%;
+  height: 4px;
+  background: var(--highlight);
+  border-radius: 0.5rem;
+}
+
+#addBtn, #startBtn, #collectBtn, #downloadBtn {
+  width: 92%;
+  background: var(--primary);
+  color: var(--text);
+  font-size: 2rem;
+  font-family: inherit;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0;
+  align-self: center;
+}
+
+#ctrlBtns {
+  width: 92%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+#ctrlBtns button {
+  background: var(--bg-light);
+  color: var(--text);
+  font-size: 1rem;
+  font-family: inherit;
+  border: var(--border) solid 0.125rem;
+  border-top-color: var(--highlight);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0;
+}

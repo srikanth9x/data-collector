@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Collector</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+   <!-- <link rel="stylesheet" href="style.css">-->
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+  <body class="flex flex-col items-center bg-neutral-50 dark:bg-neutral-950 font-[Instrument_Sans]">
+    <div id="page" class="bg-neutral-50 dark:bg-neutral-950 p-4 w-full max-w-3xl flex flex-col items-center gap-4">
+      <nav class="w-full p-2 rounded flex justify-center bg-neutral-100 dark:bg-neutral-900 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600">
+        <h1 class="text-4xl text-neutral-950 dark:text-neutral-50 cursor-pointer">Data Collector</h1>
+      </nav>
+      <form class="w-full p-2 rounded flex flex-col gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600">
+        <label class="text-xl text-neutral-950 dark:text-neutral-50 cursor-pointer" for="targetTitle">Target Title</label>
+        <input class="w-full p-2 rounded text-neutral-950 dark:text-neutral-50 bg-neutral-100 dark:bg-neutral-800 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600" id="targetTitle" type="text" placeholder="eg: ISL Alphabets" required>
+        
+        <label class="text-xl text-neutral-950 dark:text-neutral-50 cursor-pointer" for="targetItems">Target Items</label>
+        <input class="w-full p-2 rounded text-neutral-950 dark:text-neutral-50 bg-neutral-100 dark:bg-neutral-800 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600" id="targetItems" type="text" placeholder="eg: A,B,C,D" required>
+        
+        <button class="w-full flex justify-center p-2 rounded text-2xl font-bold text-neutral-50 bg-red-500 hover:bg-red-700" id="addBtn">Add</button>
+      </form>
+      <section class="w-full rounded flex flex-col gap-2" id="targetsList">
+        <!--
+        <p>Taegets List</p>
+        <div>ISL Alphabets</div>
+        <div>ISL Numbers</div> 
+        --->
+      </section>
+      <p class="text-neutral-950 dark:text-neutral-50">Made by <a class="text-red-500 hover:text-red-700 cursor-pointer" href="https://srikanth9x.pages.dev" target="_blank">Srikanth</a></p>
+    </div>
+    
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

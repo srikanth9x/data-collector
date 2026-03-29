@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Collector</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+   <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <body class="flex flex-col items-center bg-neutral-50 dark:bg-neutral-950 font-[Instrument_Sans]">
+    <div class="bg-neutral-50 dark:bg-neutral-950 p-4 w-full max-w-3xl flex flex-col items-center gap-4" id="page">
+      <nav class="w-full p-2 rounded flex justify-center bg-neutral-100 dark:bg-neutral-900 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600">
+        <h1 class="text-4xl text-neutral-950 dark:text-neutral-50 cursor-pointer">Data Collector</h1>
+      </nav>
+      <section class="w-full relative flex flex-col items-center mb-[16.75rem] bg-red-500">
+        <video class="absolute w-full aspect-[4/3] bg-transparent border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600 rounded" id="video" autoplay playsinline></video>
+        <canvas class="absolute w-full aspect-[4/3] bg-transparent border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600 rounded" id="canvas"></canvas>
+      </section>
+      
+      <section class="w-full flex flex-col items-center gap-2 bg-neutral-100 dark:bg-neutral-900 text-neutral-950 dark:text-neutral-50 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600 rounded py-2" id="targetDisplay">
+        <p>Currently Collecting</p>
+        <h1 class="text-7xl font-bold text-red-500" id="currentTarget"></h1>
+        <p>
+          <span id="collectedSamples"></span> 
+          / 
+          <span id="samples"></span>
+          samples
+        </p>
+        <div class="w-[92%] h-2 bg-neutral-300 dark:bg-neutral-600 rounded" id="progressBar">
+          <div class="h-2 rounded bg-red-500" id="progressFill"></div>
+        </div>
+      </section>
+      
+      <button class="w-full flex justify-center p-2 rounded text-2xl font-bold text-neutral-50 bg-red-500 hover:bg-red-700" id='collectBtn'>Collect</button>
+      
+      <section class="w-full grid grid-cols-3 gap-2" id='ctrlBtns'>
+        <button class="bg-neutral-100 dark:bg-neutral-900 text-neutral-950 dark:text-neutral-50 cursor-pointer border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600 rounded py-2" id='prevBtn'>← Prev</button>
+        <button class="bg-neutral-100 dark:bg-neutral-900 text-neutral-950 dark:text-neutral-50 cursor-pointer border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600 rounded py-2" id='undoBtn'>Undo</button>
+        <button class="bg-neutral-100 dark:bg-neutral-900 text-neutral-950 dark:text-neutral-50 cursor-pointer border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600 rounded py-2" id='nextBtn'>Next →</button>
+      </section>
+      <section class="w-full flex flex-col items-center gap-2 bg-neutral-100 dark:bg-neutral-900 text-neutral-950 dark:text-neutral-50 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600 rounded py-2" id="download">
+        <p>Download as CSV</p>
+        <button class="w-[92%] flex justify-center p-2 rounded text-2xl font-bold text-neutral-50 bg-red-500 hover:bg-red-700" id="downloadBtn">Download</button>
+      </section>
+      <p class="text-neutral-950 dark:text-neutral-50">Made by <a class="text-red-500 hover:text-red-700 cursor-pointer" href="https://srikanth9x.pages.dev" target="_blank">Srikanth</a></p>
+    </div>
+    
+    <script type="module" src="collector.js"></script>
+  </body>
+</html>

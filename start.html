@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Data Collector</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body class="flex flex-col items-center bg-neutral-50 dark:bg-neutral-950 font-[Instrument_Sans]">
+    <div class="bg-neutral-50 dark:bg-neutral-950 p-4 w-full max-w-3xl flex flex-col items-center gap-4" id="page">
+      <nav class="w-full p-2 rounded flex justify-center bg-neutral-100 dark:bg-neutral-900 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600">
+        <h1 class="text-4xl text-neutral-950 dark:text-neutral-50 cursor-pointer">Data Collector</h1>
+      </nav>
+      <form class="w-full p-2 rounded flex flex-col gap-2 bg-neutral-100 dark:bg-neutral-900 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600">
+        <p class="text-xl text-neutral-950 dark:text-neutral-50">Selected List: <span id="selectedList"></span></p>
+        <label class="text-xl text-neutral-950 dark:text-neutral-50 cursor-pointer" for="participantId">Participant ID</label>
+        <input class="w-full p-2 rounded text-neutral-950 dark:text-neutral-50 bg-neutral-100 dark:bg-neutral-800 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600" id="participantId" type="text" placeholder="eg: 25N71A0518" required />
+          
+        <label class="text-xl text-neutral-950 dark:text-neutral-50 cursor-pointer" for="samples">Samples</label>
+        <input class="w-full p-2 rounded text-neutral-950 dark:text-neutral-50 bg-neutral-100 dark:bg-neutral-800 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600" id="samples" type="text" placeholder="eg: 30" value="30" required />
+            
+        <label class="text-xl text-neutral-950 dark:text-neutral-50 cursor-pointer" for="frames">Frames</label>
+        <input class="w-full p-2 rounded text-neutral-950 dark:text-neutral-50 bg-neutral-100 dark:bg-neutral-800 border border-neutral-500 border-t border-t-neutral-400 dark:border-t-neutral-600" id="frames" type="text" placeholder="eg: 15" value="15" required />
+            
+        <label class="text-xl text-neutral-950 dark:text-neutral-50 cursor-pointer">Dominant Hand</label>  
+        <div class="w-full grid grid-cols-2 place-items-center">
+          <div class="left">
+            <input type="radio" id="leftHand" name="hand" value="left" class="accent-red-500"/>
+            <label class="text-xl text-neutral-950 dark:text-neutral-50 cursor-pointer" for="leftHand">Left Hand</label>
+          </div>
+
+          <div class="right">
+            <input type="radio" id="rightHand" name="hand" value="right" checked  class="accent-red-500"/>
+            <label class="
+            text-xl text-neutral-950 dark:text-neutral-50 cursor-pointer" for="rightHand">Right Hand</label>
+          </div>
+        </div>
+        <button class="w-full flex justify-center p-2 rounded text-2xl font-bold text-neutral-50 bg-red-500 hover:bg-red-700" id="startBtn">Start Collecting</button>
+          </form>
+          <p class="text-neutral-950 dark:text-neutral-50">Made by <a class="text-red-500 hover:text-red-700 cursor-pointer" href="https://srikanth9x.pages.dev" target="_blank">Srikanth</a></p>
+        </div>
+
+        <script
+            type="module"
+            src="start.js"
+        ></script>
+    </body>
+</html>
