@@ -133,6 +133,7 @@ async function detectHands() {
       lastLandmarks = {left: leftLandmarks, right: rightLandmarks}
         
       if(isCapturing) {
+        collectBtn.textContent = `Collecting... ${captureCount}/${session.frames}`
         const normalLeft = normaliseLandmarks(lastLandmarks.left);
         const normalRight = normaliseLandmarks(lastLandmarks.right);
         
@@ -161,6 +162,9 @@ async function detectHands() {
           if(isCompleted && !isLastTarget) currentTargetIdx++
           updateUI();
         }
+      } else {
+        collectBtn.textContent = 'Collect';
+        updateUI();
       }
     }
   }
